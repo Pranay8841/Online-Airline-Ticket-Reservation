@@ -1,0 +1,739 @@
+/* Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@500&display=swap');
+
+/* Variable CSS */
+.root {
+    --header-height: 3rem;
+
+/* Colors */
+    --hue-color: 190;
+
+/* HSL COlor Mode */
+
+    --first-color: hsl(190, 64%, 22%);
+    --first-color-second: hsl(190, 64%, 22%);
+    --first-color-alt: hsl(190, 64%, 15%);
+    --title-color: hsl(190, 64%, 18%);
+    --text-color: hsl(190, 24%, 35%);
+    --text-color-light: hsl(190, 8%, 60%);
+    --input-color: hsl(190, 24%, 97%);
+    --body-color: hsl(190, 100%, 99%);
+    --white-color: #FFF;
+    --scroll-bar-color: hsl(190, 12%, 90%);
+    --scroll-thumb-color: hsl(190, 12%, 75%);
+
+/* Font and Typography */
+--body-font: 'Kurale', serif;
+--title-font: 'Raleway', sans-serif;
+--biggest-font-size: 2.5rem;
+--h1-font-size: 1.5rem;
+--h2-font-size: 1.25rem;
+--h3-font-size: 1rem;
+--normal-font-size: .938rem;
+--small-font-size: .813rem;
+--smaller-font-size: .75rem;
+
+/* Font Weight */
+--font-medium: 500;
+--font-semi-bold: 600;
+
+/* Margins Bottom */
+--mb-0-25: .25rem;
+--mb-0-5: .5rem;
+--mb-0-75: .75rem;
+--mb-1: 1rem;
+--mb-1-25: 1.25rem;
+--mb-1-5: 1.5rem;
+--mb-2: 2rem;
+--mb-2-5: 2.5rem;
+
+/* Z index */
+--z-tooltip: 10;
+--z-fixed: 100;
+
+/* Hover Overplay */
+--img-transition: .3s;
+--img-hidden: hidden;
+--img-scale: scale(1.1);
+}
+
+@media screen and (min-width: 968px){
+    :root {
+        --biggest-font-size: 4rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.75rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: 8.813rem;
+    }
+}
+
+/* Variable Dark theme */
+
+/* Button Dark and Light */
+
+/* base */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body{
+    margin: 3rem 0 0 0;
+    font-family: 'Kurale', serif;
+    font-size: .938rem;
+    background-color: hsl(190, 100%, 99%);
+    color: hsl(190, 24%, 35%);
+
+}
+
+h1, h2, h3{
+    color: hsl(190, 64%, 18%);
+    font-weight: 600;
+    font-family: 'Merienda One', cursive;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+img, video{
+    max-width: 100%;
+    height: auto;
+}
+
+button, input{
+    border: none;
+    font-family: 'Kurale', serif;
+    font-size: .938rem;
+}
+
+button{
+    cursor: pointer;
+}
+
+input{
+    outline: none;
+}
+
+/* Reusable CSS classes */
+.section{
+    padding: 4.5rem 0 2.5rem;
+}
+
+.section__title{
+    font-size: 1.25rem;
+    color:  hsl(190, 64%, 18%);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
+.container{
+    max-width: 1330px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+/* Header */
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;  
+    z-index: 100;
+    background-color: hsl(190, 64%, 22%);
+}
+/* Navigation bar */
+.nav{ 
+    overflow: hidden;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* text-decoration: none; */
+}
+
+.nav__logo,
+.nav__toggle{
+    color:  #FFF;
+}
+
+.nav__logo{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.nav__toggle{
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.nav__menu{
+    position: relative;
+}
+
+@media screen and (max-width: 767px){
+    .nav__menu{
+        position: fixed;
+        background-color: hsl(190, 100%, 99%);
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        box-shadow: -1px 0 4px hsl(190, 64%, 15% );
+        padding: 3rem;
+        transition: .4s;
+    }
+}
+
+.nav__list{
+   font-family: 'Merienda One', cursive;
+   font-size: 5px;
+   display: flex; 
+   flex-direction: column;
+   margin-right: 700px;
+   row-gap: 2.5rem;
+}
+.nav__button{
+    position: absolute;
+    /* top: 30%; */
+    margin-left: 1000px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav__register{
+    position: absolute;
+    /* top: 30%; */
+    margin-left: 880px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav__link {
+    border-bottom: 3px solid transparent;
+    font-size: 15px;
+    color: hsl(190, 8%, 60%);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.nav__link:hover{
+    border-bottom: 3px solid red;
+}
+
+
+/* .active{
+    border-bottom: 3px solid red;
+} */
+.nav__close{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: hsl(190, 64%, 18%);
+    cursor: pointer;
+}
+/* Show Menu */
+.show-menu{
+    right: 0;
+}
+/* Change backgroung header */
+.scroll-header{
+    background-color: hsl(190, 100%, 99%);
+    box-shadow: 0 0 4px hsl(190, 64%, 15%);
+}
+
+.scroll-header .nav__logo,
+.scroll-header .nav__toggle{
+    color: hsl(190, 64%, 18%);
+}
+/* Active link */
+
+/* Home */
+.home{
+    height: 100%;
+    /* background-color: white; */
+    margin: 88px 80px auto;
+    /* margin-bottom: 20px; */
+}
+.home__img{
+    box-shadow: 0 6px 24px rgba(182, 9, 234, .99);
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: -60px;
+}
+.home__container{
+    position: relative;
+    /* height: calc(100vh - 3rem); */
+    align-content: center;
+}
+
+.home__flight-booking{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    /* width: 100%; */
+    margin: -300px 170px auto;
+    text-align: center;
+}
+
+.home__data-title{
+    font-size: 50px;
+}
+
+.home__data_para{
+    font-size: 20px;
+}
+
+.home__go{
+    height: 50px;
+    width: 70px;
+    text-align: center;
+    margin: 10px -5px;
+    border-radius: 15px;
+    border: solid blue;
+    cursor: pointer;
+}
+
+.go__button
+{
+    height: 20px;
+    width: 20px;
+    
+}
+#departure{
+    height: 35px;
+    width: 140px;
+    text-align: center;
+    margin: 15px 15px;
+    border-radius: 15px;
+    border: solid orange;
+}
+#flight-date{
+    height: 35px;
+    width: 120px;
+    text-align: center;
+    margin: 15px 15px;
+    border-radius: 15px;
+    border: solid orange;
+}
+/* Buttons */
+
+/* About */
+.about__section{
+    box-shadow: 0 6px 24px rgba(182, 9, 234, .99);
+    border-radius: 20px;
+    height: 100%;
+    /* background-color: white; */
+    background: linear-gradient(90deg, #00DBDE, #FC00FF);
+    margin: 88px 80px auto;
+    /* margin-bottom: 20px; */
+}
+
+.about__para{
+    color: black;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 20px 35px;
+}
+
+table {
+    background-color: linear-gradient(90deg, #00DBDE, #FC00FF);
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  td, th {
+    background: white;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.about__title{
+    font-size: 30px;
+    margin: 15px 20px;
+}
+
+/* offer */
+.offer__section{
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 24px rgba(182, 9, 234, .99);
+    height: 100%;
+    background: linear-gradient(180deg, #ba5370 ,#f4e2d8);
+    margin: 120px 80px auto;
+    border-radius: 20px;
+}
+.offer__img{
+    margin: 5px 25px auto;
+    align-items: center;
+}
+
+.offer__img-one{
+    border-radius: 20px;
+    height: 180px;
+    width: 285px;
+    margin: 20px 15px;
+    transition: .3s;
+}
+
+.offer__img-one:hover{
+   transform: scale(1.1);
+}
+.offer__heading{
+    position:relative;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Discover */
+.discover__section{
+    box-shadow: 0 6px 24px rgba(182, 9, 234, .99);
+    height: 100%;
+    /* background-color: white; */
+    background: linear-gradient(90deg, #00DBDE, #FC00FF);
+    margin: 88px 80px auto;
+    border-radius: 20px;
+    /* margin-bottom: 20px; */
+}
+.discover__card{
+    position: relative;
+    width: 200px;
+    overflow: hidden;
+}
+
+.discover__data{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+}
+
+.discover__title, .discover__description{
+    color: #FFF;
+}
+
+.discover__title{
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.discover__description{
+    display: block;
+    font-size: .75rem;
+}
+
+.discover__img{
+    margin: 10px 25px auto;
+}
+.discover__img-one{
+    border-radius: 20px;
+    margin: 5px 25px auto;
+    align-items: center;
+}
+
+.discover__img-one{
+    height: 400px;
+    width: 285px;
+    margin: 20px 15px;
+    transition: .3s;
+}
+
+.discover__img-one:hover{
+   transform: scale(1.1);
+}
+.discover__heading{
+    margin-top: 20px;
+    color: #FFF;
+    position:relative;
+    text-align: center;
+    font-size: 30px;
+}
+/* Flight  tickets*/
+
+/* Experience */
+
+/* video */
+
+/* Sponsors */
+.sponsor__container{
+    grid-template-columns: repeat(auto-fit, minmax(4410px, 1fr));
+    align-items: center;
+    justify-content: center;
+    row-gap: 10.5rem;
+}
+
+.sponsor__content{
+    display: inline-block;
+    margin: 3px 80px auto;
+}
+.sponsor__img{
+    width: 110px;
+    filter: invert(.7);
+    transition: .3s;
+}
+.sponsor__content:hover .sponsor__img{
+    filter: invert(.3);
+}
+
+/* Social media (Footer) */
+
+.footer__content{
+    background-color: wheat;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* row-gap: 2rem; */
+}
+
+.footer__title, .footer__subtitle{
+    font-size: 1rem;
+}
+
+.footer__title{
+    margin-bottom: 0.5rem;
+}
+
+.footer__description{
+    margin-bottom: 2px;
+}
+
+.footer__social{
+    font-size: 1.25rem;
+    color: hsl(190, 64%, 18%);
+    margin: 20px 5px auto;
+    margin-right: 1rem;
+}
+
+.footer__subtitle{
+    margin-bottom: 1rem;
+}
+
+.footer__item{
+    margin-bottom: 0.75rem;
+}
+
+.footer__link{
+    color: hsl(190, 24%, 35%);
+}
+.footer__link:hover{
+    color: hsl(190, 64%, 18%);
+}
+
+.footer__rights{
+    color: white;
+    background-color: darkslategrey;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    text-align: center;
+}
+
+.footer__copy, .footer__terms-link{
+    font-size: .813rem;
+    color: hsl(190, 8%, 60%);
+}
+
+.footer__terms{
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+
+.footer__terms-link:hover{
+    color: hsl(190, 24%, 35%);
+}
+
+.footer__data{
+    display: inline-block;
+    margin: 1px 100px auto;
+}
+/* Scroll up */
+
+/* scroll bar */
+
+/* Media Queries */
+/* for small devices */
+@media screen and(min-width:1024px) {
+   .container{
+    margin-left: auto;
+    margin-right: auto;
+   }
+}
+/* for medium devices */
+@media screen and (min-width: 768px){
+    body{
+        margin: 0;
+    }    
+    .nav{
+        height: calc(3rem + 1.5rem);
+    }
+    .nav__link{
+        color:#FFF;
+        text-decoration: initial;
+    }
+    .nav__link:hover{
+        color: #FFF;
+    }
+    .nav__dark{
+        position: initial;
+    }
+    .nav__menu{
+        display: flex;
+        column-gap: 1rem;
+    }
+    .nav__list{
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+    .nav__toggle, .nav__close, .change-theme-name{
+        display: none;
+    }
+    .change-theme{
+        color: #FFF;
+    }
+    .active__link::before{
+        background-color: #FFF;
+    }
+    .scroll-header .nav__link{
+        color: hsl(190, 24%, 35%);
+    }
+    .scroll-header .active__link{
+        color: hsl(190, 8%, 60%);
+    }
+    .scroll-header .active__link::before{
+        background-color: hsl(190, 8%, 60%);
+    }
+
+}
+
+/* OUR FLIGHTS */
+.flight__section{
+    margin-top: 5rem;
+    padding-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.flight__data{
+    font-size: 25px;
+}
+
+.more__flights{
+    position: absolute;
+    /* top: 30%; */
+    margin-left: 43rem;
+    margin-top: 5rem;
+    /* margin-bottom: 5rem; */
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.flight__cards{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 130px;
+    max-width: 700px;
+    /* margin: 20px 20px; */
+    margin-left: 400px;
+    border-radius: 5px;
+
+}
+
+/* .flight__cards img{
+    display: flex;
+    flex-direction: column;
+    height: 113px;
+    width: 50%;
+    margin: -5px 300px;
+    padding: 1px 279px;
+    border-radius: 5px 5px 0 0;
+} */
+
+.grid-container {
+    display: grid;
+    /* height: 400px; */
+    align-content: space-evenly;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-align: center;
+    padding: 30px 0;
+    font-size: 30px;
+  }
+.div-one{
+    background-color: #00DBDE;
+    height: 110px;
+    width: 530px;
+}
+.div-two{
+    background-color: #00DBDE;
+    height: 110px;
+    width: 140px;
+}
+
+
+.flight__cards:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card__container{
+    padding: 2px 16px;
+}
+/* LOGIN Button */
+/* For Large Devices */
+
+/* For tall screens on mobile y laptos */
